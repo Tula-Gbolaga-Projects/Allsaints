@@ -30,14 +30,15 @@ const NavBar = () => {
   };
   return (
     <>
-      <nav className="w-full p-4 border-b shadow-sm bg-white   z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between space-x-10">
-          <div className="flex">
+      <nav className="w-full  bg-white z-50 ">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+          {/* Left: Logo + Menu */}
+          <div className="flex items-center space-x-10">
             {/* Logo */}
             <Logo />
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex space-x-6 items-center relative">
+            <div className="hidden lg:flex space-x-6 items-center">
               {menuItems.map((item) => (
                 <div
                   key={item}
@@ -52,7 +53,7 @@ const NavBar = () => {
                   }}
                 >
                   <button
-                    className="text-sm font-medium hover:underline"
+                    className="text-sm font-semibold uppercase tracking-wide hover:underline"
                     onClick={() => {
                       if (item === "Be Inspired") navigate("/be-inspired");
                       if (item === "Stores") navigate("/stores");
@@ -65,15 +66,15 @@ const NavBar = () => {
             </div>
           </div>
 
-          {/* Icons */}
-          <div className="flex items-center space-x-4">
-            <div className="w-6 h-6 flex items-center justify-center">
+          {/* Right: Icons */}
+          <div className="flex items-center space-x-6">
+            <div className="w-5 h-5 flex items-center justify-center">
               <Search className="w-full h-full" />
             </div>
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className="w-5 h-5 flex items-center justify-center">
               <Profile className="w-full h-full" />
             </div>
-            <div className="w-6 h-6 flex items-center justify-center">
+            <div className="w-7 h-7 flex items-center justify-center">
               <img
                 src={WishlistIcon}
                 alt="Wishlist"
@@ -81,8 +82,8 @@ const NavBar = () => {
               />
             </div>
             <div
-              className="w-6 h-6 flex items-center justify-center"
-              MouseEnter={() => setShowCart(true)}
+              className="w-7 h-7 flex items-center justify-center cursor-pointer"
+              onMouseEnter={() => setShowCart(true)}
             >
               <img
                 src={CartIcon}
@@ -90,16 +91,6 @@ const NavBar = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-          </div>
-
-          {/* Mobile Menu */}
-          <div className="flex lg:hidden items-center space-x-4 ml-auto">
-            {/* <Search className="w-5 h-5 cursor-pointer" />
-            <ShoppingBag className="w-5 h-5 cursor-pointer" />
-            <Menu
-              className="w-6 h-6 cursor-pointer"
-              onClick={() => setMobileMenuOpen(true)}
-            /> */}
           </div>
         </div>
 
@@ -112,7 +103,7 @@ const NavBar = () => {
               exit={{ opacity: 0, y: -10 }}
               onMouseEnter={() => setHoveredItem(hoveredItem)}
               onMouseLeave={() => setHoveredItem(null)}
-              className="absolute top-full left-0 w-full bg-white shadow-md z-40 p-8 border-t"
+              className="absolute  left-0 w-full bg-white z-40 p-8 "
             >
               {componentMap[hoveredItem]}
             </motion.div>
@@ -130,10 +121,10 @@ const NavBar = () => {
             >
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">Your Cart</h2>
-                <X
+                {/* <X
                   className="w-6 h-6 cursor-pointer"
                   onClick={() => setShowCart(false)}
-                />
+                /> */}
               </div>
               <p>Cart items go here.</p>
             </motion.div>
@@ -151,10 +142,10 @@ const NavBar = () => {
             >
               <div className="flex justify-between items-center mb-6">
                 <div className="text-lg font-bold">Menu</div>
-                <X
+                {/* <X
                   className="w-6 h-6 cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
-                />
+                /> */}
               </div>
               <ul className="space-y-4">
                 {menuItems.map((item) => (
