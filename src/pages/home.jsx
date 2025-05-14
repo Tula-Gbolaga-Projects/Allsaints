@@ -1,4 +1,4 @@
-import { CTABar } from "../components/home";
+import { CTABar, HomeSections } from "../components/home";
 import { NavBar } from "../components/shared";
 
 const Home = () => {
@@ -6,6 +6,7 @@ const Home = () => {
     <div>
       <CTABar />
       <NavBar />
+      <HomeSections />
     </div>
   );
 };
