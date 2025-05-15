@@ -1,5 +1,5 @@
 import { CTABar, HomeSections } from "../components/home";
-import { NavBar } from "../components/shared";
+import { Footer, NavBar } from "../components/shared";
 
 const Home = () => {
   return (
@@ -7,6 +7,7 @@ const Home = () => {
       <CTABar />
       <NavBar />
       <HomeSections />
+      <Footer />
     </div>
   );
 };

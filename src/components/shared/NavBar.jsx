@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "../../assets/logo";
-import { Search, Profile } from "../../assets/MenuIcons";
+import { Search, Profile, Hamburger } from "../../assets/MenuIcons";
 import WishlistIcon from "../../assets/wishlisticon.png";
 import CartIcon from "../../assets/cart.png";
 import MenuContent from "../home/MenuContent";
@@ -35,8 +35,9 @@ const NavBar = () => {
           {/* Left: Logo + Menu */}
           <div className="flex items-center space-x-10">
             {/* Logo */}
-            <Logo />
-
+            <div className="w-[150px] lg:w-[250px] flex">
+              <Logo className="w-full h-full object-contain" />
+            </div>
             {/* Desktop Menu */}
             <div className="hidden lg:flex space-x-6 items-center">
               {menuItems.map((item) => (
@@ -67,11 +68,11 @@ const NavBar = () => {
           </div>
 
           {/* Right: Icons */}
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4 lg:space-x-6">
             <div className="w-5 h-5 flex items-center justify-center">
               <Search className="w-full h-full" />
             </div>
-            <div className="w-5 h-5 flex items-center justify-center">
+            <div className="w-5 h-5 hidden lg:flex items-center justify-center">
               <Profile className="w-full h-full" />
             </div>
             <div className="w-7 h-7 flex items-center justify-center">
@@ -82,7 +83,7 @@ const NavBar = () => {
               />
             </div>
             <div
-              className="w-7 h-7 flex items-center justify-center cursor-pointer"
+              className="w-7 h-7 hidden lg:flex items-center justify-center cursor-pointer"
               onMouseEnter={() => setShowCart(true)}
             >
               <img
@@ -90,6 +91,9 @@ const NavBar = () => {
                 alt="Cart"
                 className="w-full h-full object-contain"
               />
+            </div>
+            <div className="w-5 h-5 block lg:hidden items-center justify-center">
+              <Hamburger className="w-full h-full" />
             </div>
           </div>
         </div>

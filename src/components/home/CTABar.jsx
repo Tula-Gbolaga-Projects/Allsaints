@@ -6,24 +6,31 @@ const CTABar = () => {
     setShowFirst((prev) => !prev);
   };
 
-  console.log(showFirst);
   return (
-    <div className="flex p-2 justify-center bg-[#ebeae6] ">
-      <button className="px-5 font-bold" onClick={changeContent}>{`<`}</button>
-      {showFirst ? (
-        <span>
-          Summer Collection: Shop <span className="underline">Women</span> &{" "}
-          <span className="underline">Men</span>
-        </span>
-      ) : (
-        <span>
-          {" "}
-          Free <span className="underline">Delivery</span> and{" "}
-          <span className="underline">Returns</span>
-        </span>
-      )}
+    <div className="flex items-center justify-center bg-[#ebeae6] p-2">
+      <button className="px-3 font-bold shrink-0" onClick={changeContent}>
+        {`<`}
+      </button>
 
-      <button className="px-5 font-bold" onClick={changeContent}>{`>`}</button>
+      <div className=" mx-2 overflow-hidden text-sm w-[300px]">
+        <div className="text-center truncate">
+          {showFirst ? (
+            <>
+              Summer Collection: Shop <span className="underline">Women</span> &{" "}
+              <span className="underline">Men</span>
+            </>
+          ) : (
+            <>
+              Free <span className="underline">Delivery</span> and{" "}
+              <span className="underline">Returns</span>
+            </>
+          )}
+        </div>
+      </div>
+
+      <button className="px-3 font-bold shrink-0" onClick={changeContent}>
+        {`>`}
+      </button>
     </div>
   );
 };

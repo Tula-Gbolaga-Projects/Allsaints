@@ -1,5 +1,32 @@
 import { Link } from "react-router";
 const HomeSections = () => {
+  const categories = [
+    {
+      title: "CARRY ALL",
+      imageUrl:
+        "https://www.allsaints.com/dw/image/v2/BHHD_PRD/on/demandware.static/-/Library-Sites-library-shared/default/dwd9e171ca/images/GLP/MW/07-05-25/070525_MW_bags-min.jpg?sw=954&sh=1192&q=80",
+      link: "https://www.allsaints.com/men/bags",
+      buttonText: "SHOP BAGS",
+      alt: "Shop mens bags",
+    },
+    {
+      title: "WEAR EVERYWHERE",
+      imageUrl:
+        "https://www.allsaints.com/dw/image/v2/BHHD_PRD/on/demandware.static/-/Library-Sites-library-shared/default/dwe3ba0039/images/GLP/MW/07-05-25/070525_MW_footwear-min.jpg?sw=954&sh=1192&q=80",
+      link: "https://www.allsaints.com/men/boots-and-shoes",
+      buttonText: "SHOP FOOTWEAR",
+      alt: "Shop mens footwear",
+    },
+    {
+      title: "ACCESSORIES ALL AREAS",
+      imageUrl:
+        "https://www.allsaints.com/dw/image/v2/BHHD_PRD/on/demandware.static/-/Library-Sites-library-shared/default/dw655f2383/images/GLP/MW/07-05-25/070525_MW_accessories-min.jpg?sw=956&sh=1192&q=80",
+      link: "https://www.allsaints.com/men/accessories",
+      buttonText: "SHOP ACCESSORIES",
+      alt: "Shop mens accessories",
+    },
+  ];
+
   return (
     <>
       {/* Video Section */}
@@ -34,7 +61,6 @@ const HomeSections = () => {
           />
         </video>
       </Link>
-
       {/* first Image Section */}
       <div className="relative w-full">
         {/* Responsive Image */}
@@ -70,7 +96,6 @@ const HomeSections = () => {
           </Link>
         </div>
       </div>
-
       <div className="relative w-full">
         {/* Responsive Image */}
         <picture className="">
@@ -105,7 +130,6 @@ const HomeSections = () => {
           </Link>
         </div>
       </div>
-
       <div className="relative w-full">
         {/* Responsive Image */}
         <Link to="https://www.allsaints.com/men/edits/holiday-shop">
@@ -131,7 +155,7 @@ const HomeSections = () => {
           </p>
 
           {/* Center Text */}
-          <div className="text-black font-bold text-3xl md:text-6xl leading-snug space-y-2">
+          <div className="text-white font-bold text-3xl md:text-6xl leading-snug space-y-2">
             <div>DESTINATION</div>
             <div>/</div>
             <div>EVERYWHERE</div>
@@ -144,6 +168,28 @@ const HomeSections = () => {
             </Link>
           </div>
         </div>
+      </div>
+      <div className=" bg-[#ebeae6] grid grid-cols-1 sm:grid-cols-3 gap-1 m-auto w-full relative pb-[30px] sm:pb-[100px]">
+        {categories.map((item, index) => (
+          <div key={index} className="flex flex-col  ">
+            <Link href={item.link} className="w-full">
+              <img
+                src={item.imageUrl}
+                alt={item.alt}
+                className="w-full h-auto object-cover"
+              />
+            </Link>
+            <div className="mt-4 block pl-2 lg:pl-4">
+              <h3 className="text-[25px] ">{item.title}</h3>
+              <Link
+                href={item.link}
+                className="inline-block mt-2 text-sm hover:text-gray-700 transition"
+              >
+                {item.buttonText}
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
