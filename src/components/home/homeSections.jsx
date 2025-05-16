@@ -130,6 +130,7 @@ const HomeSections = () => {
           </Link>
         </div>
       </div>
+
       <div className="relative w-full">
         {/* Responsive Image */}
         <Link to="https://www.allsaints.com/men/edits/holiday-shop">
@@ -169,7 +170,7 @@ const HomeSections = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-[#ebeae6] grid grid-cols-1 sm:grid-cols-3 gap-1 m-auto w-full relative pb-[30px] sm:pb-[100px]">
+      <div className=" bg-[#ebeae6] grid grid-cols-1 sm:grid-cols-3 gap-1 m-auto w-full pb-[30px] sm:pb-[100px]">
         {categories.map((item, index) => (
           <div key={index} className="flex flex-col  ">
             <Link href={item.link} className="w-full">
