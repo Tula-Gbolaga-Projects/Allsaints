@@ -30,7 +30,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <nav className="w-full  bg-white z-50 ">
+      <nav className="w-full  bg-white z-500 ">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Left: Logo + Menu */}
           <div className="flex items-center space-x-10">

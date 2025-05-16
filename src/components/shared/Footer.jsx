@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white text-black ">
+    <footer className="bg-white text-black relative bottom-0 ">
       {/* PROMO */}
       <div className="px-4 lg:px-8 ">
         <div className="py-4 lg:hidden">
