@@ -35,3 +35,11 @@
 .read-the-docs {
   color: #888;
 }
+
+.custom-scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.custom-scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
