@@ -9,7 +9,7 @@ function App() {
       <Route index element={<Home />} />
       <Route path="/:menuItem" element={<Home />} />
       <Route
-        path="/:menuItem/:category/:subcategory?"
+        path="/:menuItem/:category/:subCategory?"
         element={<ProductList />}
       />
     </Routes>
