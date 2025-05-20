@@ -54,7 +54,7 @@ const NavBar = () => {
                   }}
                 >
                   <button
-                    className="text-sm font-semibold uppercase tracking-wide hover:underline"
+                    className="text-sm font-semibold uppercase tracking-wide hover:underline cursor-pointer"
                     onClick={() => {
                       if (item === "Be Inspired") navigate("/be-inspired");
                       if (item === "Stores") navigate("/stores");
