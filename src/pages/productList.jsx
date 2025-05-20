@@ -47,17 +47,17 @@ const ProductList = () => {
       <Layout>
         {prodCat ? (
           <div>
-            <p className="text-center text-[30px]">{`${
+            <p className="text-center text-[30px] mb-4">{`${
               menuItem.charAt(0).toUpperCase() + menuItem.slice(1)
             }'s ${prodSubCat?.name || prodCat?.name}`}</p>
-            <div className=" flex justify-center max-w-[800px] mx-auto px-4">
+            <div className=" flex justify-center max-w-[800px] mx-auto px-4 mb-4">
               <div className={`${!showFullDesc ? "flex" : ""}`}>
                 <span className={`${!showFullDesc ? "line-clamp-1 " : ""} `}>
                   {prodSubCat?.description || prodCat?.description}
                 </span>{" "}
                 <span
                   onClick={toggleDesc}
-                  className={`underline text-sm whitespace-nowrap ${
+                  className={`underline text-sm whitespace-nowrap cursor-pointer ${
                     !showFullDesc ? " flex-shrink-0" : ""
                   }`}
                 >
@@ -65,19 +65,16 @@ const ProductList = () => {
                 </span>
               </div>
             </div>
-            <p className="px-6  overflow-x-auto whitespace-nowrap custom-scrollbar-hidden text-center">
+            <p className="px-6 font-semibold overflow-x-auto whitespace-nowrap custom-scrollbar-hidden text-center mb-4">
               {recommendedList?.map((x) => {
                 return (
-                  <span className="px-3">
+                  <span className="px-3 hover:underline cursor-pointer">
                     {x?.name?.toUpperCase() || x?.toUpperCase()}
                   </span>
                 );
               })}
             </p>
-            <div
-              className="grid grid-cols-4
-            "
-            >
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-1  w-full ">
               {SampleProducts.map((product) => {
                 return <SingleProduct product={product} />;
               })}

@@ -1,16 +1,17 @@
-import { useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router";
-import { Home, ProductList } from "./pages";
+import { Home, ProductDetails, ProductList } from "./pages";
+import { ListXDetailsRouter } from "./components/productList/listXDetailsRouter";
 
 function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
       <Route path="/:menuItem" element={<Home />} />
+      <Route path="/:menuItem/:category/*" element={<ProductList />} />
       <Route
-        path="/:menuItem/:category/:subCategory?"
-        element={<ProductList />}
+        path="/:menuItem/:category/:subCategory?/:productId"
+        element={<ListXDetailsRouter />}
       />
     </Routes>
   );
