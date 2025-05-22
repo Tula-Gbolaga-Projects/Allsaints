@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const ProductImageViewer = ({ images = [] }) => {
+const ImgViewerLg = ({ images = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -40,7 +40,7 @@ const ProductImageViewer = ({ images = [] }) => {
 
   return (
     <div
-      className="relative w-full mx-auto"
+      className="relative w-full mx-auto hidden lg:block"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -126,4 +126,4 @@ const ProductImageViewer = ({ images = [] }) => {
   );
 };
 
-export { ProductImageViewer };
+export { ImgViewerLg };
