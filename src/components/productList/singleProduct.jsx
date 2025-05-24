@@ -75,7 +75,7 @@ const SingleProduct = ({ product }) => {
               onClick={() => setSelectedColor(color)}
               className={`w-4 h-4 rounded-full border ${
                 selectedColor === color
-                  ? "ring-2 ring-black border border-white border-2"
+                  ? "ring-2 ring-black border-white border-2"
                   : ""
               }`}
               style={{ backgroundColor: color }}
