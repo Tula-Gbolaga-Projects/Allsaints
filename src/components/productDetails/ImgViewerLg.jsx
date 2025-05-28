@@ -49,8 +49,8 @@ const ImgViewerLg = ({ images = [] }) => {
     >
       {/* Main Image */}
       <div
-        className="w-full cursor-zoom-in relative"
-        onClick={() => setIsFullscreen(true)}
+        className="w-full relative"
+        // onClick={() => setIsFullscreen(true)}
       >
         <img
           src={images[activeIndex]}
@@ -61,7 +61,7 @@ const ImgViewerLg = ({ images = [] }) => {
 
       {/* Thumbnails on Hover */}
       {isHovered && (
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-2 p-2  bg-opacity-80 rounded">
+        <div className="absolute left-6 top-[10%]  flex flex-col gap-2 p-2  bg-opacity-80 rounded">
           {images.map((img, idx) => (
             <img
               key={idx}
