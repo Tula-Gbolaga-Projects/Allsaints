@@ -144,6 +144,7 @@ const ProductDetails = () => {
               ))}
             </div>
           </div>
+          {/* tab contents */}
           {activeTab === "Design" && (
             <div>
               <p className={`${!showFullDesc ? "line-clamp-2 " : ""} mt-2  `}>
